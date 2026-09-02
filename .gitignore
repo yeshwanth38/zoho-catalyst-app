@@ -1,0 +1,14 @@
+# Node modules
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Catalyst CLI temporary files
+.catalyst/
+catalyst-debug.log
+
+# Environment & OS files
+.env
+.DS_Store
+Thumbs.db

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zoho Catalyst Application</title>
+  
+  <!-- Zoho Catalyst Web SDK -->
+  <script src="https://static.zohocdn.com/catalyst/sdk/js/4.0.0/catalystWebSDK.js"></script>
+  <script src="/__catalyst/sdk/init.js"></script>
+
+  <!-- Application Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <a href="#" class="nav-brand">
+      <div class="brand-icon">C</div>
+      <span class="brand-name">Catalyst App</span>
+      <span class="brand-tag">Zoho Cloud</span>
+    </a>
+    
+    <div class="nav-user" id="navUser" style="display: none;">
+      <div class="user-badge">
+        <div class="avatar" id="userNavAvatar">U</div>
+        <span class="user-name" id="userNavName">User</span>
+      </div>
+      <button class="btn-logout" id="logoutBtn">
+        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+        </svg>
+        Sign Out
+      </button>
+    </div>
+  </nav>
+
+  <!-- Main Content Views Container -->
+  <main class="main-content">
+
+    <!-- 1. LOGIN VIEW -->
+    <section class="view active" id="loginView">
+      <div class="login-card">
+        <div class="login-header">
+          <div class="login-logo">C</div>
+          <h1 class="login-title">Welcome Back</h1>
+          <p class="login-subtitle">Sign in to your Zoho Catalyst Application</p>
+        </div>
+
+        <!-- Catalyst Embedded Auth Container (Automated via Catalyst SDK) -->
+        <div id="catalyst-auth-container"></div>
+
+        <!-- Standard Login Form -->
+        <form class="auth-form" id="loginForm">
+          <div class="form-group">
+            <label for="emailInput">Email Address</label>
+            <input type="email" id="emailInput" class="form-control" placeholder="user@company.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="passwordInput">Password</label>
+            <input type="password" id="passwordInput" class="form-control" placeholder="••••••••" required>
+          </div>
+
+          <button type="submit" class="btn-primary">Sign In</button>
+        </form>
+
+        <div class="login-divider">
+          <span>OR QUICK ACCESS</span>
+        </div>
+
+        <button type="button" class="btn-secondary" id="demoLoginBtn">
+          ⚡ Instant Demo Sign In
+        </button>
+
+        <div class="demo-note">
+          🔒 Powered by <strong>Zoho Catalyst Authentication</strong>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. HOME DASHBOARD VIEW -->
+    <section class="view" id="homeView">
+      <!-- Banner -->
+      <div class="welcome-banner">
+        <h1>Welcome, <span id="welcomeName">User</span>! 👋</h1>
+        <p>You have successfully authenticated into your Zoho Catalyst Web Application.</p>
+      </div>
+
+      <!-- Quick Metrics Grid -->
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-icon green">
+            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <div class="metric-info">
+            <label>Session Status</label>
+            <div class="value">
+              <span class="status-pill online">
+                <span class="status-dot"></span> Active
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-icon blue">
+            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+            </svg>
+          </div>
+          <div class="metric-info">
+            <label>User Role</label>
+            <div class="value" id="metricRole">Developer</div>
+          </div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-icon purple">
+            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2" />
+            </svg>
+          </div>
+          <div class="metric-info">
+            <label>User ID</label>
+            <div class="value" id="metricUserId">CAT-10293</div>
+          </div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-icon amber">
+            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </div>
+          <div class="metric-info">
+            <label>Auth Provider</label>
+            <div class="value" id="metricAuthMode">Catalyst SDK</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dashboard Main Grid -->
+      <div class="dashboard-sections">
+        <!-- User Profile Card -->
+        <div class="panel">
+          <div class="panel-header">
+            <h2 class="panel-title">User Profile Details</h2>
+            <span class="status-pill online"><span class="status-dot"></span> Authenticated</span>
+          </div>
+
+          <div class="profile-list">
+            <div class="profile-item">
+              <label>Full Name</label>
+              <span id="profileName">-</span>
+            </div>
+            <div class="profile-item">
+              <label>Email Address</label>
+              <span id="profileEmail">-</span>
+            </div>
+            <div class="profile-item">
+              <label>Role</label>
+              <span id="profileRole">-</span>
+            </div>
+            <div class="profile-item">
+              <label>User ID</label>
+              <span id="profileUserId">-</span>
+            </div>
+            <div class="profile-item">
+              <label>Platform Environment</label>
+              <span>Zoho Catalyst Cloud</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Catalyst Services & Features Panel -->
+        <div class="panel">
+          <div class="panel-header">
+            <h2 class="panel-title">Catalyst Platform Integration</h2>
+          </div>
+
+          <div class="services-grid">
+            <div class="service-card">
+              <div class="service-title">🔐 Authentication</div>
+              <div class="service-desc">Hosted and Embedded user authentication with session management and user roles.</div>
+            </div>
+
+            <div class="service-card">
+              <div class="service-title">⚡ Serverless Functions</div>
+              <div class="service-desc">Backend business logic executed seamlessly using Node.js, Python, or Java.</div>
+            </div>
+
+            <div class="service-card">
+              <div class="service-title">🗄️ Data Store</div>
+              <div class="service-desc">Relational NoSQL cloud database for storing application tables and records.</div>
+            </div>
+
+            <div class="service-card">
+              <div class="service-title">🌐 Web Hosting</div>
+              <div class="service-desc">High-performance CDN static web hosting deployed via Catalyst CLI.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2026 Zoho Catalyst Application. Built with Zoho Catalyst Web SDK.
+  </footer>
+
+  <!-- Application Controller -->
+  <script src="js/app.js"></script>
+</body>
+</html>
